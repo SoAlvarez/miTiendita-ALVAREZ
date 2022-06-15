@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import CoffeeRoundedIcon from "@mui/icons-material/CoffeeRounded";
 
 const pages = ["Home", "Productos", "Contacto"];
 const carrito = ["Ver carrito", "Finalizar compra", "Vaciar carrito"];
@@ -37,6 +38,10 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" color='primary'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        <IconButton
+              title="LOGO">
+              <CoffeeRoundedIcon />
+            </IconButton>
           <Typography
             variant="h6"
             noWrap
@@ -54,7 +59,6 @@ const ResponsiveAppBar = () => {
           >
             Tiendita de café
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
