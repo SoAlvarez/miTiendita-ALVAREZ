@@ -1,20 +1,14 @@
-//@ts-check
-
-import logo from './canastita.svg';
+// @ts-nocheck
 import './App.css';
+import { ThemeProvider } from '@mui/material';
 import NavBar from './components/NavBar';
+import theme from './components/TemaConfig';
 
 function App() {
   return (
-    <><NavBar />
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" typeof='click' />
-        <p>
-          HOLA CODER!
-        </p>
-      </header>
-    </div></>
+    <ThemeProvider theme={theme}>
+      <><NavBar /></>
+    </ThemeProvider>
   );
 }  
 

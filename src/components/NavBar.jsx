@@ -34,7 +34,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color='primary'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -52,7 +52,7 @@ const ResponsiveAppBar = () => {
               textDecoration: "none",
             }}
           >
-            La tiendita de café
+            Tiendita de café
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
