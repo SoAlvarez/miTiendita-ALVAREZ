@@ -9,29 +9,20 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import CoffeeRoundedIcon from "@mui/icons-material/CoffeeRounded";
+import CartWidget from "./CartWidget";
 
 const pages = ["Home", "Productos", "Contacto"];
-const carrito = ["Ver carrito", "Finalizar compra", "Vaciar carrito"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -122,37 +113,12 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <IconButton
-              title="Carrito"
-              onClick={handleOpenUserMenu}
-              sx={{ p: 0, color: "white" }}
-            >
-              <AddShoppingCartIcon />
+          <Box sx={{flexGrow: 0}}>
+            <IconButton 
+            title="carrito"
+            sx={{p: 0, color: "white"}}>
+              <CartWidget />
             </IconButton>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {carrito.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>
